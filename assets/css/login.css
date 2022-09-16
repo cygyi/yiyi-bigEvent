@@ -1,0 +1,53 @@
+body {
+    height: 100vh;
+    background: url(../images/login_bg.jpg) no-repeat center / cover;
+}
+
+/* 登录模块样式 */
+.login-panel {
+    width: 400px;
+    height: 310px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -155px;
+    margin-left: -200px;
+}
+
+/* 登录模块样式--标题 */
+.login-title {
+    height: 60px;
+    background: url(../images/login_title.png) no-repeat center;
+}
+
+/* 表单模块样式 */
+
+.form-pd {
+    padding: 0 25px;
+}
+
+.login-flex {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* 表单--图标 */
+.layui-form-item {
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.layui-input {
+    padding-left: 30px;
+}
+
+/* 注册表单样式 */
+.reg-form {
+    display: none;
+}
