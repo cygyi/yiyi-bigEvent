@@ -12,7 +12,7 @@
 
 <body>
     <div class="layui-card">
-        <div class="layui-card-header">修改密码</div>
+        <div class="layui-card-header">重置密码</div>
         <div class="layui-card-body">
             <form class="layui-form" lay-filter="userinfo-form" action="">
                 <input name="id" type="hidden" />
@@ -20,22 +20,24 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">原密码</label>
                     <div class="layui-input-block">
-                        <input type="text" name="username" placeholder="请输入原密码" autocomplete="off" class="layui-input">
+                        <input type="text" name="oldPwd" placeholder="请输入原密码" lay-verify="required|pwd"
+                            autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <!-- —————————————— -->
                 <div class="layui-form-item">
                     <label class="layui-form-label">新密码</label>
                     <div class="layui-input-block">
-                        <input type="text" name="nickname" placeholder="请输入新密码" autocomplete="off" class="layui-input">
+                        <input type="text" name="newPwd" placeholder="请输入新密码" lay-verify="required|pwd"
+                            autocomplete="off" class="layui-input newpswd">
                     </div>
                 </div>
                 <!-- —————————————— -->
                 <div class="layui-form-item">
                     <label class="layui-form-label">确认新密码</label>
                     <div class="layui-input-block">
-                        <input type="text" name="email" required lay-verify="required" placeholder="请确认新密码"
-                            autocomplete="off" class="layui-input">
+                        <input type="text" name="email" lay-verify="regpwd" placeholder="请确认新密码" autocomplete="off"
+                            class="layui-input">
                     </div>
                 </div>
                 <!-- —————————————— -->

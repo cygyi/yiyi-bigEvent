@@ -12,8 +12,8 @@ function getUserInfo() {
                 return
             } else {
                 //成功则根据数据信息渲染页面
-                if (res.user_pic) {
-                    $('.avatar-img').attr('scr', res.user_pic).show()
+                if (res.data.user_pic) {
+                    $('.avatar-img').attr('src', res.data.user_pic).show()
                     $('.avatar').hide()
                 } else {
                     $('.avatar-img').hide()

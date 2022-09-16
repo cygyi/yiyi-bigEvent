@@ -1,0 +1,10 @@
+body {
+    min-height: 100vh;
+    background-color: #f2f3f5;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.layui-input-block {
+    width: 500px;
+}

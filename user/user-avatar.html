@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/lib/cropper/cropper.css">
+    <link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="../assets/css/user-avatar.css">
+</head>
+
+<body>
+    <div class="layui-card">
+        <div class="layui-card-header">更改头像</div>
+        <div class="layui-card-body">
+            <!-- 头像 -->
+            <div class="ava-top">
+                <div class="left">
+                    <img src="../assets/images/sample.jpg" alt="">
+                </div>
+                <div class="right">
+                    <div>
+                        <div class="hundred yuan"></div>
+                        <span>100X100</span>
+                    </div>
+                    <div>
+                        <div class="fifty yuan"></div>
+                        <span>50X50</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 按钮 -->
+            <div class="ava-bottom">
+                <input accept="image/*" type="file" style="display: none;">
+                <button class="layui-btn layui-btn-normal ava-choose">选择图片</button>
+                <button class="layui-btn layui-btn-warm ava-upload">上传</button>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- 引入js -->
+<script src="../assets/lib/jquery.js"></script>
+<script src="../assets/lib/layui/layui.all.js"></script>
+<script src="../assets/js/baseAPI.js"></script>
+<script src="../assets/lib/cropper/Cropper.js"></script>
+<script src="../assets/lib/cropper/jquery-cropper.js"></script>
+<script src="../assets/js/user-avatar.js"></script>
+
+</html>
