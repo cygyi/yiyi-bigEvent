@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/lib/cropper/cropper.css">
+    <link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="../assets/css/article-pub.css">
+</head>
+
+<body>
+    <div class="layui-card">
+        <div class="layui-card-header">文章发布</div>
+        <div class="layui-card-body">
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" placeholder="请输入文章名称" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <!--  -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章类别</label>
+                    <div class="layui-input-block">
+                        <select name="cate_id">
+                            <!-- 动态模板引擎 -->
+                        </select>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章内容</label>
+                    <div class="layui-input-block">
+                        <textarea name="content"></textarea>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章封面</label>
+                    <div class="layui-input-block">
+                        <div class="article-pic">
+                            <div class="left">
+                                <img class="leftPic" src="../assets/images/sample2.jpg" alt="">
+                            </div>
+                            <div class="right">
+                                <div class="right-pic"></div>
+                                <input type="file" accept="image/*" style="display: none;" />
+                                <button type="button" class="layui-btn layui-btn-warm choose-img">选择封面</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn pub" lay-submit lay-filter="formDemo">发布</button>
+                        <button lay-submit class="layui-btn layui-btn-primary save">存为草稿</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script type="text/html" id="pub-temp">
+    <option value="">请选择文章类别</option>
+    {{each data}}
+    <option value="{{$value.Id}}">{{$value.alias}}</option>
+    {{/each}}
+</script>
+<!-- 引入js -->
+<script src="../assets/lib/template-web.js"></script>
+<script src="../assets/lib/jquery.js"></script>
+<script src="../assets/lib/tinymce/tinymce.min.js"></script>
+<script src="../assets/lib/tinymce/tinymce_setup.js"></script>
+<script src="../assets/lib/layui/layui.all.js"></script>
+<script src="../assets/lib/cropper/Cropper.js"></script>
+<script src="../assets/lib/cropper/jquery-cropper.js"></script>
+<script src="../assets/js/baseAPI.js"></script>
+<script src="../assets/js/article-pub.js"></script>
+
+</html>
