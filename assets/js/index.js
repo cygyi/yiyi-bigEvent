@@ -5,7 +5,6 @@ function getUserInfo() {
     $.ajax({
         url: '/my/userinfo',
         success: res => {
-            console.log(res);
             //如果获取失败跳转登录页面
             if (res.status !== 0) {
                 location.href = '/login.html'

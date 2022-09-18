@@ -48,6 +48,7 @@ $('.ava-upload').click(function () {
             avatar: base64
         },
         success: function (res) {
+            layer.msg(res.message)
             window.parent.getUserInfo()
         }
     })

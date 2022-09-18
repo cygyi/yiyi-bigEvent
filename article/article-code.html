@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="../assets/css/article-code.css">
+</head>
+
+<body>
+    <div class="layui-card">
+        <div class="layui-card-header">
+            <div>文章类别</div>
+            <button class="layui-btn article-add">添加目录</button>
+        </div>
+        <div class="layui-card-body">
+            <table class="layui-table">
+                <colgroup>
+                    <col width="150">
+                    <col width="200">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>文章名称</th>
+                        <th>文章介绍</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+</body>
+<!-- 创建弹出（添加目录）表单模板 -->
+<script type="text/html" id="form-tplate">
+    <form class="layui-form form-add" action="">
+        <div class="layui-form-item">
+            <label class="layui-form-label">文章名称</label>
+            <div class="layui-input-block">
+            <input type="text" name="name" required  lay-verify="required" placeholder="请输入文章名称" autocomplete="off" class="layui-input">
+        </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">文章介绍</label>
+            <div class="layui-input-block">
+            <input type="text" name="alias" required  lay-verify="required" placeholder="请输入文章介绍" autocomplete="off" class="layui-input">
+        </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">提交</button>
+            </div>
+        </div>
+    </form>
+</script>
+<!-- 创建弹出（修改目录）表单模板 -->
+<script type="text/html" id="edit-form-tplate">
+    <form lay-filter="editForm" class="layui-form form-edit" action="">
+        <input type="hidden" name="Id" />
+        <div class="layui-form-item">
+            <label class="layui-form-label">文章名称</label>
+            <div class="layui-input-block">
+            <input type="text" name="name" required  lay-verify="required" placeholder="请输入文章名称" autocomplete="off" class="layui-input">
+        </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">文章介绍</label>
+            <div class="layui-input-block">
+            <input type="text" name="alias" required  lay-verify="required" placeholder="请输入文章介绍" autocomplete="off" class="layui-input">
+        </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">提交</button>
+            </div>
+        </div>
+    </form>
+</script>
+<!-- 创建页面模板 -->
+<script type="text/html" id="article-tplate">
+    {{each data}}
+    <tr>
+        <td>{{$value.Id}}</td>
+        <td>{{$value.name}}</td>
+        <td>{{$value.alias}}</td>
+        <td>
+            <button data-id="{{$value.Id}}" class="layui-btn layui-btn-sm layui-btn-normal edit">修改</button>
+            <button data-id="{{$value.Id}}" class="layui-btn layui-btn-sm layui-btn-danger remove">删除</button>
+        </td>
+    </tr>
+    {{/each}}
+</script>
+<!-- 引入js文件 -->
+<script src="../assets/lib/template-web.js"></script>
+<script src="../assets/lib/jquery.js"></script>
+<script src="../assets/lib/layui/layui.all.js"></script>
+<script src="../assets/js/baseAPI.js"></script>
+<script src="../assets/js/article-code.js"></script>
+
+</html>
